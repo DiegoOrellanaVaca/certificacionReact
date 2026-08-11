@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Modalidad de curso</legend>
+            <div class="radio-group">
+                <input type="radio" value="presencial" name="modalidad" id="presencial">
+                <label for="presencial">presencial</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" value="virtual" name="modalidad" id="virtual">
+                <label for="virtual">virtual</label>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Nivel del curso</legend>
+            <div class="radio-group">
+                <input type="radio" value="basico" name="nivel" id="basico">
+                <label for="basico">básico</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" value="intermedio" name="nivel" id="intermedio">
+                <label for="intermedio">intermedio</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" value="avanzado" name="nivel" id="avanzado">
+                <label for="avanzado">avanzado</label>
+            </div>
+        </fieldset>
+
+        <label for="turno"> Turno</label>
+        <select name="turno" id="turno">
+            <option value="a">turno a</option>
+            <option value="b">turno b</option>
+            <option value="c">turno c</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+
+        <label for="comentario"> Comentario </label>
+        <textarea name="comentario" id="comentario"></textarea>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+
+    <form action="/guardar" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
