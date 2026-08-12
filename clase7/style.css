@@ -1,0 +1,19 @@
+html {
+    background-color: rgb(128, 114, 114);
+}
+
+
+body {
+    background-color: rgb(128, 114, 114);
+
+}
+
+.contenedor {
+    background-color: rgb(51, 97, 51);
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    border: 10px solid rgb(124, 86, 86);
+    margin: 50px;
+    border-radius: 20px;
+}
