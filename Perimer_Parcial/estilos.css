@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+label {
+    background-color: rgb(86, 140, 179);
+    color: white;
+    border: 2px solid gray;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 15px;
+    margin: 50px;
+}
+
+#btn-iniciar {
+    appearance: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+    border: none;
+}
+
+.pista {
+    background-color: rgb(245, 245, 245);
+    width: 75rem;
+    height: 15rem;
+    border: 10px solid rgb(124, 86, 86);
+    border-radius: 20px;
+    margin: 50px;
+    position: relative;
+}
+
+.emoji {
+    font-size: 3rem;
+    margin: 0;
+    position: absolute;
+    left: 1rem;
+}
+
+.tortuga {
+    top: 1.5rem;
+    transition-duration: 7s;
+}
+
+.gato {
+    top: 6rem;
+    transition-duration: 5s;
+}
+
+.cohete {
+    top: 10.5rem;
+    transition-duration: 3s;
+}
+
+.meta {
+    position: absolute;
+    top: 1rem;
+    left: 73rem;
+    height: 13rem;
+    border-left: 4px dashed rgb(0, 0, 0);
+}
+
+#btn-iniciar:checked~.pista .emoji {
+    left: 89.5rem;
+}
