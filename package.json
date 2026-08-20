@@ -1,0 +1,29 @@
+{
+  "name": "certificacionreact",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check:js": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoOrellanaVaca/certificacionReact.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoOrellanaVaca/certificacionReact/issues"
+  },
+  "homepage": "https://github.com/DiegoOrellanaVaca/certificacionReact#readme",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.1",
+    "eslint-js": "^0.0.1-security"
+  },
+  "dependencies": {
+    "globals": "^17.11.0"
+  }
+}
