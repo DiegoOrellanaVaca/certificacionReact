@@ -1,0 +1,66 @@
+Quiero que me desarrolles un juego de serpiente en la carpeta 2doParcial con el pryecto JuegoSerpiente, en react y typeScript. El juego debe representar el tablero como una matriz  o tabla  HTML y permitir que la persona controle la sepiente mediante el teclado. El proyecto debe estar creado como una aplicacion nueva con vite, react y typeScript.
+*Las regas del juego*
+1.El tablero debe tener 8 filas y 8 columnas
+2.La serpiente debe comenzar con tres segmentos
+3. La Cabeza  debe identificarse claramente con el resto del cuerpo.
+4. Cada pulsacion de una flecha debe representar un turno.
+5.En cada turno , la cabeza debe avanzar una celda en la direccion indicada.
+6. El cuerpo  debe seguir  a la cabeza;  si no com, debe eliminarse el ultimo segmento.
+7.La comida debe  aparecer en una celda que no este ocupada por la serpiente.
+8.Cuando la cabeza llega a la comida, la serpiente debe crecer en un segmento.
+9. El juego debe terminar cuando la serpiente salga del tablero o choque con su propio cuerpo.
+10. El estado del juego debe actualizarse  y el tablero debe volver a renderizarse despues de cada turno.
+11. Cuando el juego termine, debe existir una señal visual. Por ejemplo, en el ejemplo que el borde externo de la tabla cambia de color a rojo cuando ocurre una colison o a verde si ganaste el juego.
+En este fragmento se muestra una forma de reconocer la tecla presionada, adaptala para actualizar el estado del juego:
+
+import type {keyboardEvent} from 'react';
+const manejarTecla = (event: keyboardEvent<HTMLDivElement) => {
+  if (event.key === 'ArrowUp') {
+    console.log('Arriba');
+  } else if (event.key === 'ArrowDown') {
+    console.log('Abajo');
+  } else if (event.key === 'ArrowLeft') {
+    console.log('Izquierda');
+  } else if (event.key === 'ArrowRight') {
+    console.log('Derecha');
+  }
+};
+ return (
+  <div tabIndex={0} onKeyDown={manejarTecla}>
+    {/* tablero*/}
+  </div>
+);
+
+
+NUmeros aleatrios ejemplo:
+
+const indice = Math.floor(Math.random() * elementos.length);
+const elemento = elementos[indice];
+
+
+
+*Requisitos tecnicos*
+
+1.crear un proyecto nuevo con vite, react y typeScript
+2.Utilizar archivos .tsx para los componentes React
+3. representar el tablero mediante una tabla o una matriz de celdas
+4.Utilizar useState para conservar el estado de la serpiente, la comida y el estado del juego.
+5.Utilizar eventos de teclado para controlar el movimiento.
+6.Usar map para generar las filas y las celdas del tablero.
+7.Uasr una propiedad key estable al renderizar listas.
+8.Utilizar css para diferenciar visualmente la cabeza, el cuerpo, la comida y las celdas del tablero.
+9.Separar el codigo en componentes  cuando sea necesario para mantenerlo comprensible.
+10. Incluir un mensaje o una señal visual cuando el juego termine.
+11.Debe haber un read que explique como instalar  y ejecutar el proyecto.
+
+Condiciones que el proyecto debe cumplir 
+
+Solo se pueden utilizar herramientas conceptos y tecnicas vistos en clase, ademas de propias de typeScript o javaScript necesarias para el proyecto.
+No esta permitido usar librerias externas que no hayan sido indicadas en clase.
+
+
+
+
+
+
+
