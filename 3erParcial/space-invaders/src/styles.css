@@ -1,0 +1,13 @@
+.contenedor {
+    background-color: rgb(240, 173, 85);
+    display: flex;
+    justify-content: center;
+}
+
+.arma {
+    width: 25rem;
+    height: 5rem;
+    background-color: rgb(235, 100, 38);
+    position: absolute;
+    bottom: 0px;
+}
