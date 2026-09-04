@@ -9,11 +9,8 @@ const FILAS = 8;
 const COLUMNAS = 8;
 const TOTAL = FILAS * COLUMNAS;
 
-// Cada celda se identifica con un número: indice = fila * COLUMNAS + columna.
-// La serpiente es una lista de esos números y la posición 0 siempre es la cabeza.
 const serpienteInicial: number[] = [35, 34, 33];
 
-// Devuelve un número al azar de una celda que no ocupe la serpiente.
 const generarComida = (serpiente: number[]): celda => {
     const celdasLibres = Array<number>(TOTAL)
         .fill(0)
@@ -54,7 +51,6 @@ export const JuegoSerpiente = () => {
     const [situacion, setSituacion] = useState<situacion>('jugando');
     const [turnos, setTurnos] = useState<number>(0);
 
-    // El tablero se arma a partir del estado: una lista de 64 marcas.
     const tablero: marca[] = Array<marca>(TOTAL)
         .fill('vacia')
         .map((_valor, indice) => {
@@ -70,7 +66,6 @@ export const JuegoSerpiente = () => {
             return 'vacia';
         });
 
-    // Un turno: la cabeza avanza una celda y el cuerpo la sigue.
     const avanzarTurno = (direccion: direccion): void => {
         const cabeza = serpiente[0];
         const fila = Math.floor(cabeza / COLUMNAS);
@@ -79,7 +74,6 @@ export const JuegoSerpiente = () => {
         const nuevaFila = filaSiguiente(fila, direccion);
         const nuevaColumna = columnaSiguiente(columna, direccion);
 
-        // Si la cabeza sale del tablero, el juego termina.
         if (nuevaFila < 0 || nuevaFila >= FILAS) {
             setSituacion('perdido');
             return;
@@ -92,20 +86,15 @@ export const JuegoSerpiente = () => {
         const nuevaCabeza = nuevaFila * COLUMNAS + nuevaColumna;
         const come = nuevaCabeza === comida;
 
-        // Si come, la serpiente mide un segmento más; si no, mide lo mismo
-        // porque el último segmento (la cola) desaparece.
         const largo = come ? serpiente.length + 1 : serpiente.length;
 
-        // Segmentos que seguirán ocupados después de mover la cabeza.
         const cuerpoRestante = serpiente.slice(0, largo - 1);
 
-        // Si la cabeza cae sobre su propio cuerpo, el juego termina.
         if (cuerpoRestante.includes(nuevaCabeza)) {
             setSituacion('perdido');
             return;
         }
 
-        // Cada segmento toma el lugar del segmento que tenía delante.
         const nuevaSerpiente = Array<number>(largo)
             .fill(0)
             .map((_valor, posicion) => {
@@ -119,7 +108,6 @@ export const JuegoSerpiente = () => {
             const nuevaComida = generarComida(nuevaSerpiente);
             setComida(nuevaComida);
             if (nuevaComida === null) {
-                // Ya no queda ninguna celda libre: la serpiente llenó el tablero.
                 setSituacion('ganado');
             }
         }
@@ -147,7 +135,6 @@ export const JuegoSerpiente = () => {
         setTurnos(0);
     };
 
-    // El borde de la tabla es la señal visual del final del juego.
     const estiloDeLaTabla = (): CSSProperties => {
         if (situacion === 'perdido') {
             return styles.tablaPerdido;
@@ -215,10 +202,6 @@ export const JuegoSerpiente = () => {
             <button style={styles.boton} onClick={reiniciar}>
                 Reiniciar
             </button>
-            <p style={styles.ayuda}>
-                Mueve la serpiente con las flechas del teclado. Cada flecha es un turno.
-                Si no responde, haz clic sobre el tablero.
-            </p>
         </div>
     );
 };
@@ -305,10 +288,5 @@ const styles: { [key: string]: CSSProperties } = {
         backgroundColor: '#2e7d32',
         border: 'none',
         cursor: 'pointer',
-    },
-    ayuda: {
-        marginTop: '12px',
-        fontSize: '14px',
-        color: '#52606d',
     },
 };
